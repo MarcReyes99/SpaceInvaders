@@ -26,6 +26,7 @@ public class Bala : MonoBehaviour
         if (target_building && collision.gameObject.tag == "Building")
         {
             collision.gameObject.transform.localScale += new Vector3(-2, 0, 0);
+            Destroy(gameObject);
         }
     }
 }
