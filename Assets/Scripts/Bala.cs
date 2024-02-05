@@ -22,6 +22,8 @@ public class Bala : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            MovimientoEnemigos velocidadEnemy = collision.gameObject.GetComponent<MovimientoEnemigos>();
+            velocidadEnemy.velocidadHorizontal += 0.25f;
         }
         if (target_building && collision.gameObject.tag == "Building")
         {
