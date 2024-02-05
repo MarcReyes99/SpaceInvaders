@@ -18,11 +18,11 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*if (target_enemies && collision.gameObject.tag == "Enemies")
+        if (target_enemies && collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<AsteroidController>().Muerte();
+            Destroy(collision.gameObject);
             Destroy(gameObject);
-        }*/
+        }
         if (target_building && collision.gameObject.tag == "Building")
         {
             collision.gameObject.transform.localScale += new Vector3(-2, 0, 0);
