@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1611246849, guid: 739ddc9806567384bb1e5ff2ba4b976d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet_speed: 1000
-  target_enemies: 1
-  target_building: 1
 --- !u!70 &-7763519649734103421
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
