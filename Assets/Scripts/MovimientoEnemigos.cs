@@ -5,12 +5,11 @@ using UnityEngine;
 public class MovimientoEnemigos : MonoBehaviour
 {
     public float velocidadHorizontal;
-    public float velocidadDescenso;
+    public float direccionDescenso;
     public float limiteXnegativo;
     public float limiteXpositivo;
 
     private bool moverDerecha = true;
-
     void Update()
     {
         float movimiento = 1;
@@ -27,7 +26,7 @@ public class MovimientoEnemigos : MonoBehaviour
             if (limiteXpositivo < transform.position.x)
             {
                 moverDerecha = !moverDerecha;
-                Vector3 nuevaDireccion = transform.position + new Vector3(0, -1, 0) * Time.deltaTime * velocidadDescenso;
+                Vector3 nuevaDireccion = transform.position + new Vector3(0, -1, 0) * Time.deltaTime * direccionDescenso;
                 transform.position = nuevaDireccion;
             }
         }
@@ -36,7 +35,7 @@ public class MovimientoEnemigos : MonoBehaviour
             if (limiteXnegativo > transform.position.x)
             {
                 moverDerecha = !moverDerecha;
-                Vector3 nuevaDireccion = transform.position + new Vector3(0, -1, 0) * Time.deltaTime * velocidadDescenso;
+                Vector3 nuevaDireccion = transform.position + new Vector3(0, -1, 0) * Time.deltaTime * direccionDescenso;
                 transform.position = nuevaDireccion;
             }
         }
