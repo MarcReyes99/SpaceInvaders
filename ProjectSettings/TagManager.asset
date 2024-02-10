@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Building
   - Enemy
+  - Pared1
+  - Pared2
   layers:
   - Default
   - TransparentFX
