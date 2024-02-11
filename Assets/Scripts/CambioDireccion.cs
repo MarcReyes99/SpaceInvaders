@@ -5,21 +5,28 @@ using UnityEngine;
 public class CambioDireccion : MonoBehaviour
 {
     public MovimientoEnemigos cambioDireccion;
+    private bool colisionActivada = true;
+    public float retrasoColision = 1f; 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Si el enemigo colisiona con una pared, cambia la dirección
         if (collision.gameObject.CompareTag("Pared1") || collision.gameObject.CompareTag("Pared2"))
         {
-            CambiarDireccion();
+            if (colisionActivada)
+            {
+                colisionActivada = false;
+                if (cambioDireccion != null)
+                {
+                    cambioDireccion.moverDerecha = !cambioDireccion.moverDerecha;
+                    Vector3 nuevaDireccion = cambioDireccion.transform.position + new Vector3(0, -1, 0) * Time.deltaTime * cambioDireccion.direccionDescenso;
+                    cambioDireccion.transform.position = nuevaDireccion;
+                    Invoke("ActivarColision", retrasoColision);
+                }
+            }
         }
     }
-
-    // Método para cambiar la dirección de los enemigos
-    private void CambiarDireccion()
+    private void ActivarColision()
     {
-        if (cambioDireccion != null)
-        {
-            cambioDireccion.CambiarDireccion();
-        }
+        colisionActivada = true;
     }
 }
