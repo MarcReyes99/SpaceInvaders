@@ -20,4 +20,13 @@ public class MovimientoEnemigos : MonoBehaviour
         Vector3 nuevaPosicion = transform.position + new Vector3(1, 0, 0) * movimiento * velocidadHorizontal * Time.deltaTime;
         transform.position = nuevaPosicion;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Building")
+        {
+            UI puntuacion = FindObjectOfType<UI>();
+            puntuacion.life = 0;
+        }
+    }
 }

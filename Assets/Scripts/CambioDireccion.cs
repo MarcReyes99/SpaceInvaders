@@ -6,7 +6,7 @@ public class CambioDireccion : MonoBehaviour
 {
     public MovimientoEnemigos cambioDireccion;
     private bool colisionActivada = true;
-    public float retrasoColision = 1f; 
+    public float retrasoColision = 0.5f; 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
